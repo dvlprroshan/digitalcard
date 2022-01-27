@@ -1,0 +1,72 @@
+.root {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  font-family: "Crete Round";
+  height: 80px;
+  align-items: center;
+  position: relative;
+  top: 0;
+  background: white;
+  z-index: 10;
+  a {
+    color: black;
+    font-size: 1.2rem;
+  }
+}
+.links {
+  display: flex;
+  justify-content: space-evenly;
+  column-gap: min(20px);
+}
+.nav_handler {
+  display: none;
+  position: absolute;
+  left: max(10px, 4%);
+  svg {
+    cursor: pointer;
+  }
+}
+.nav_expanded {
+  align-items: flex-start;
+  //   padding-top: 10px;
+}
+.nav_expanded .nav_handler {
+  margin-top: 10px;
+}
+.nav_expanded .links {
+  display: flex;
+  position: absolute;
+  top: 80px;
+  flex-wrap: wrap;
+  padding: 0px 20px;
+}
+.nav_expanded .account {
+  position: absolute;
+  display: flex;
+  top: 130px;
+}
+
+@media only screen and (max-width: 940px) {
+  .links {
+    display: none;
+  }
+  .nav_handler {
+    display: block;
+  }
+  .account {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .nav_expanded .account {
+    top: 150px;
+  }
+}
+
+@media only screen and (max-width: 310px) {
+  .nav_expanded .account {
+    top: 173px;
+  }
+}
